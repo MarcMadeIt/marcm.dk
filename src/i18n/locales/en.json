@@ -1,0 +1,538 @@
+{
+  "AllRightReserved": "All rights reserved",
+  "login": "Login",
+  "logging_in": "Logging in...",
+  "edit": "Edit",
+  "save": "Save",
+  "update": "Update",
+  "updating": "Updating...",
+  "delete": "Delete",
+  "deleting": "Deleting...",
+  "delete_selected": "Delete",
+  "cancel": "Cancel",
+  "close": "Close",
+  "create": "Create",
+  "creating": "Creating...",
+  "back": "Back",
+  "search": "Search",
+  "language": "Language",
+  "light": "Light",
+  "dark": "Dark",
+  "new": "new",
+  "write_company_name": "Write company name...",
+  "write_contact_person": "Write contact person...",
+  "write_title": "Write a title...",
+  "write_desc": "Write a description...",
+  "write_city": "Write a city...",
+  "write_country": "Write a country...",
+  "company_name": "Company Name",
+  "contact_person": "Contact Person",
+  "details": "Details",
+  "title": "Title",
+  "desc": "Description",
+  "description": "Description",
+  "city": "City",
+  "country": "Country",
+  "creation_date": "Creation Date",
+  "image_update": "Update Image",
+  "choose_images": "Choose Image(s)",
+  "choose_image": "Choose image",
+  "chosen_images": "Chosen Image(s)",
+  "image_preview": "Image preview",
+  "existing_image": "Current image",
+  "website_url": "Website URL",
+  "write_website_url": "https://...",
+  "share_fb": "Share on Facebook",
+  "share_instagram": "Share on Instagram",
+  "subject": "Subject",
+  "surname": "Surname",
+  "email": "Email",
+  "password": "Password",
+  "confirm_password": "Confirm Password",
+  "mobile": "Mobile",
+  "name": "Name",
+  "access_level": "Access Level",
+  "no_message": "No Message",
+  "chars": "characters",
+  "desc_required": "Description is required",
+  "city_required": "City is required",
+  "country_required": "Country is required",
+  "contact_person_required": "Contact person is required",
+  "invalid_email": "The email is invalid",
+  "password_too_short": "Password must be at least 6 characters",
+  "passwords_not_matching": "Passwords do not match",
+  "change_password": "Change Password",
+  "current_password": "Current Password",
+  "new_password": "New Password",
+  "current_password_required": "Current password is required",
+  "new_password_required": "New password is required",
+  "confirm_password_required": "Please confirm your password",
+  "password_changed_successfully": "Password changed successfully",
+  "password_change_failed": "Failed to change password",
+  "changing": "Changing...",
+  "invalid_date": "Invalid Date",
+  "invalid_days": "Invalid number of days",
+  "registration_error": "Error during registration, please try again",
+  "project": "Project",
+  "projects": "Projects",
+  "add_tag": "Add tag",
+  "no_tags_available": "All tags selected",
+  "remove_tag": "Remove tag",
+  "blog_more": "Blog",
+  "blog": "Blog",
+  "blogs": "Blogs",
+  "requests": "Requests",
+  "bookings": "Bookings",
+  "request_details": "Request Details",
+  "request_time": "Request Time",
+  "deleted_project": "Project deleted",
+  "deleted_blog": "Blog deleted",
+  "deleted_request": "Request deleted",
+  "delete_project_confirmation": "Delete Project",
+  "delete_project_prompt": "Are you sure you want to delete this project?",
+  "delete_project_warning": "This action cannot be undone.",
+  "delete_blog_confirmation": "Delete Blog",
+  "delete_blog_prompt": "Are you sure you want to delete this blog?",
+  "delete_blog_warning": "Instagram post must be deleted manually.",
+  "delete_request_confirmation": "Delete Requests",
+  "delete_request_prompt": "Are you sure you want to delete the this customer request?",
+  "delete_request_prompt_selected": "Are you sure you want to delete the selected requests?",
+  "delete_request_warning": "This action cannot be undone.",
+  "delete_user_confirmation": "Delete User",
+  "delete_user_prompt": "Are you sure you want to delete this user?",
+  "delete_user_warning": "This action cannot be undone.",
+  "project_creation": "Project creation",
+  "project_updated": "Project updated",
+  "project_deleted": "Project deleted",
+  "project_view": "View Project",
+  "projects_get_source": "Get Source",
+  "blog_creation": "Blog creation",
+  "user": "user",
+  "blog_created": "Blog created",
+  "blog_updated": "Blog updated",
+  "blog_deleted": "Blog deleted",
+  "user_created": "User created",
+  "user_updated": "User updated",
+  "user_deleted": "User deleted",
+  "create_new_user": "Create new user",
+  "create_user": "Create User",
+  "update_user": "Update User",
+  "creating_user": "Creating user...",
+  "user_admin": "User Admin",
+  "select_access_level": "Select Access Level",
+  "editor": "Editor",
+  "admin": "Admin",
+  "developer": "Developer",
+  "customer": "Customer",
+  "customers": "Customers",
+  "customer_details_updated": "Customer details updated",
+  "customer_notes": "Customer notes",
+  "no_notes_available": "No notes available",
+  "add_note": "Add note",
+  "write_note": "Write a note...",
+  "contact_customer": "Contact customer",
+  "no_address": "No address",
+  "show_route": "Show route",
+  "address_and_city": "Address & City",
+  "task_interest": "Task interest",
+  "consent_status": "Consent status",
+  "consent_given": "Consent given",
+  "consent_missing": "Consent missing",
+  "no_users": "No users available",
+  "no_blog": "No blog available",
+  "no_blogs": "No blogs available",
+  "no_projects": "No projects available",
+  "no_requests": "No requests available",
+  "sidebar_content_amount_blog": "Total blog posts: {{count}}",
+  "sidebar_content_amount_projects": "Total projects: {{count}}",
+  "sidebar_content_amount_reviews": "Total reviews: {{count}}",
+  "overview": "Overview",
+  "content": "Content",
+  "settings": "Settings",
+  "layout": "Layout Settings",
+  "general": "General",
+  "appearance": "Appearance",
+  "settings_content_coming_soon": "Settings content coming soon...",
+  "profile_settings": "User Settings",
+  "user_profile": "User Profile",
+  "site": "Site",
+  "site_setup": "Site Setup",
+  "layout_settings": "Layout Settings",
+  "user_access": "User Access",
+  "docs_settings": "Documentation",
+  "packages": "Packages",
+  "from": "From",
+  "bookingMeeting": "Book a Meeting",
+  "checking": "Checking...",
+  "latest_notifications": "Latest notifications",
+  "no_notifications": "No notifications",
+  "new_request": "New request",
+  "connected": "Connected",
+  "connectToFacebook": "Connect to Facebook",
+  "connecting": "Connecting...",
+  "disconnect": "Disconnect",
+  "disconnecting": "Disconnecting...",
+  "push_notifications": "Notifications to your device",
+  "push_notifications_description": "Receive messages and updates directly on your device. You can turn notifications on or off at any time.",
+  "push_notifications_enabled": "Notifications are turned on",
+  "push_notifications_disabled": "Notifications are turned off",
+  "go_website": "Go to Website",
+  "security": {
+    "title": "Security",
+    "logging_out_all": "Logging out...",
+    "logout_all_other_devices": "Logout from all devices",
+    "logout_all_other_devices_desc": "This will log you out of all devices except this one.",
+    "current": "This device",
+    "last_active": "Last active",
+    "unknown": "Unknown",
+    "revoke": "Logout & revoke access",
+    "refresh": "Refresh",
+    "no_sessions": "No active sessions found",
+    "active_sessions": "Active sessions",
+    "active_sessions_desc": "Devices where you are logged in."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "push": "Push notifications",
+    "push_description": "Receive push notifications on your mobile or browser when new requests are created",
+    "dashboard": "Dashboard notifications",
+    "dashboard_description": "Receive notifications in the dashboard when new requests are created"
+  },
+  "messages": {
+    "email_already_exists": "A user with this email already exists",
+    "registration_error": "Registration failed, please try again",
+    "password_too_short": "Password must be at least 6 characters",
+    "passwords_not_matching": "Passwords do not match",
+    "error_wrong": "Incorrect password or email"
+  },
+
+  "image_upload": {
+    "change_image": "Change Image",
+    "select_image_type": "Select image type",
+    "intro": "Intro (homepage)",
+    "about_us": "About Us (homepage)",
+    "upload": "Upload",
+    "preview_alt": "Preview",
+    "file_uploaded": "File uploaded!",
+    "confirm_upload": "Confirm upload",
+    "confirm_upload_message": "Are you sure you want to upload this image?",
+    "warning": "Warning: The old image cannot be restored",
+    "cancel": "Cancel"
+  },
+
+  "about": "About me",
+  "contact": "Contact",
+
+  "cards": "Cards",
+  "list": "List",
+  "from_reviews": "from",
+  "logout": "Logout",
+  "date": "Date",
+  "time": "Time",
+  "created_by": "Created By",
+  "unknown": "Unknown",
+  "unknown_page": "Unknown Page",
+  "sent_by": "Sent by",
+  "delete_confirmation": "Confirm Deletion",
+  "delete_choosings": "Delete choosings",
+  "days_left": "Days Left",
+  "time_expired": "Time has expired",
+
+  "Header": {
+    "brandName": "Marc Møller",
+    "blog": "Blogs",
+    "logoAlt": "Marc Made it Logo",
+    "projects": "Projects",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "getStarted": "Get Started",
+    "followUs": "Follow us",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "linkedIn": "LinkedIn",
+    "dropdown": {
+      "dashboard": "Dashboard / CMS",
+      "booking": "Booking System",
+      "events": "Event System",
+      "landingpage": "Landingpage",
+      "ecommerce": "E-commerce",
+      "internalTools": "Internal Tools"
+    },
+    "aria": {
+      "navigation": {
+        "linkToHome": "Go to homepage",
+        "linkToSolutions": "Go to solutions",
+        "linkToProjects": "Go to projects",
+        "linkToContact": "Go to contact",
+        "getStarted": "Get started",
+        "linkToOverview": "Go to overview",
+        "linkToContent": "Go to content",
+        "linkToCustomers": "Go to customers",
+        "linkToSettings": "Go to settings"
+      }
+    }
+  },
+
+  "Hero": {
+    "hello": "Hello",
+    "titleIntro": "I'm",
+    "name": "Marc",
+    "subtitle": "Software Engineer"
+  },
+
+  "Stack": {
+    "titleProduction": "Production",
+    "titleWebStack": "Web Stack",
+    "subtitle": "Core technologies I use to design, build and ship scalable web applications.",
+    "alsoUsed": "Also used when relevant"
+  },
+
+  "contactForm": {
+    "title": "Contact form",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your name"
+      },
+      "email": {
+        "label": "Email address",
+        "placeholder": "Enter your email"
+      },
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "Enter your phone number"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Welcome to leave a message"
+      },
+      "consent": {
+        "label": "I accept the storage of my information",
+        "readMore": "Read more"
+      }
+    },
+    "buttons": {
+      "submit": "Send message",
+      "sending": "Sender..."
+    },
+    "success": {
+      "title": "Thank you for your message!",
+      "message": "We will get back to you as soon as possible.",
+      "closeButton": "Close"
+    },
+    "errors": {
+      "invalidPhone": "Invalid phone number.",
+      "consentRequired": "You must accept storage of your information.",
+      "generic": "Something went wrong. Please try again later."
+    },
+    "aria": {
+      "name": "Enter your name",
+      "email": "Enter your email",
+      "phone": "Enter your phone number",
+      "message": "Enter your message",
+      "submit": "Send the form",
+      "consent": "Accept consent",
+      "nameInput": "Enter your name",
+      "emailInput": "Enter your email",
+      "phoneInput": "Enter your phone number",
+      "messageInput": "Enter your message",
+      "submitButton": "Send the form",
+      "consentCheckbox": "Accept consent"
+    }
+  },
+  "contactPage": {
+    "readyTitle": "Contact me directly",
+    "contactPrompt": "I'm ready to help you with your project.",
+    "ambitionMessage": "Call or email me – you're always welcome.",
+    "phoneNumber": "+45 22 50 17 03",
+    "emailAddress": "mail@marcm.dk",
+    "imageAlt": "contact me"
+  },
+  "Footer": {
+    "companyName": "Marc Made it",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "rightsReserved": "All rights reserved."
+  },
+
+  "notFound": {
+    "title": "404",
+    "message": "Oops! The page you are looking for does not exist.",
+    "home": "Go to homepage",
+    "contact": "Get in touch"
+  },
+  "analytics": {
+    "title": "Analytics",
+    "last_7_days": "Last 7 days",
+    "last_30_days": "Last 30 days",
+    "visitors": "Visitors",
+    "pageviews": "Pageviews",
+    "visits": "Visits",
+    "most_visited": "Most Visited",
+    "devices": "Devices",
+    "no_data": "No data",
+    "mobile": "Mobile",
+    "desktop": "Desktop",
+    "laptop": "Laptop",
+    "tablet": "Tablet",
+    "unknown": "Unknown",
+    "visitors_by_solution": "Visitors per solution (last 1 year)",
+    "visitors_by_month": "Visitors per month",
+    "loading": "Loading analytics",
+    "error": "Unable to load data right now.",
+    "most_visited_areas": "Most visited page areas",
+    "area": {
+      "home": "Home",
+      "solutions": "Solutions",
+      "projects": "Projects",
+      "pricing": "Pricing",
+      "getStarted": "Get Started",
+      "contact": "Contact",
+      "about": "About",
+      "jobs": "Jobs"
+    }
+  },
+  "aria": {
+    "edit_user_button": "Edit user {{name}}",
+    "delete_user_button": "Delete user {{name}}",
+    "cancel_button": "Cancel",
+    "nav_settings_setup_tab": "Setup",
+    "nav_settings_users_tab": "Users",
+    "confirm_delete_button": "Confirm deletion",
+    "danishFlag": "Danish flag",
+    "badges": {
+      "customWebsites": "Category: Custom websites"
+    },
+    "navigation": {
+      "linkToSolutions": "See more solutions",
+      "getStarted": "Get started",
+      "linkToCases": "Go to customer's website",
+      "linkToContact": "Go to contact",
+      "buttonSubmitForm": "Submit form",
+      "linkToOverview": "Go to overview",
+      "linkToContent": "Go to content",
+      "linkToCustomers": "Go to customers",
+      "linkToLayout": "Go to layout",
+      "linkToHome": "Go to homepage"
+    },
+    "topbar": {
+      "moreOptions": "More options",
+      "logout": "Log out"
+    },
+
+    "footer": {
+      "linkToAbout": "Go to about me",
+      "linkToContact": "Go to contact",
+      "linkToJobs": "Go to jobs",
+      "linkToFacebook": "Go to Facebook",
+      "linkToInstagram": "Go to Instagram"
+    },
+    "language": {
+      "changeToDanish": "Change language to Danish",
+      "changeToEnglish": "Change language to English"
+    },
+
+    "theme": {
+      "switchToLight": "Switch to light theme",
+      "switchToDark": "Switch to dark theme"
+    },
+    "settings": {
+      "open": "Open settings"
+    },
+    "password_input": "Enter password",
+    "confirm_password_input": "Confirm password",
+    "current_password_input": "Enter current password",
+    "new_password_input": "Enter new password",
+    "change_password": "Change password",
+    "changing_password": "Changing password",
+    "createProject": {
+      "companyName": "Enter company name",
+      "contactPerson": "Enter contact person",
+      "description": "Enter description",
+      "city": "Enter city",
+      "country": "Enter country",
+      "websiteUrl": "Enter website URL",
+      "chooseImage": "Choose image",
+      "create": "Create project",
+      "creating": "Creating project"
+    },
+    "projects": {
+      "back": "Back to overview",
+      "createProject": "Create a new project",
+      "projectCreated": "Project was created",
+      "projectUpdated": "Project was updated"
+    },
+    "projectsListChange": {
+      "cardsView": "Switch to cards view",
+      "listView": "Switch to list view"
+    },
+    "projectsPagination": {
+      "previousPage": "Go to the previous page",
+      "nextPage": "Go to the next page"
+    },
+
+    "navMessages": {
+      "requestsTab": "Switch to Requests tab",
+      "bookingsTab": "Switch to Bookings tab"
+    },
+    "requestNote": {
+      "inputNote": "Enter a note",
+      "submitButton": "Add note",
+      "deleteButton": "Delete note"
+    },
+    "updateRequest": {
+      "backButton": "Go back",
+      "companyInput": "Enter company name",
+      "mailInput": "Enter email address",
+      "mobileInput": "Enter mobile number",
+      "categorySelect": "Select task category",
+      "nameInput": "Enter contact person's name",
+      "addressInput": "Enter address and house number",
+      "cityInput": "Enter postal code and city",
+      "messageTextarea": "Enter message",
+      "submitButton": "Update customer"
+    },
+    "requests": {
+      "backButton": "Go back to the overview",
+      "deleteSelectedButton": "Delete selected requests",
+      "searchInput": "Search for requests"
+    },
+    "requestsActions": {
+      "editButton": "Edit customer",
+      "deleteButton": "Delete customer",
+      "dropdownMenu": "Open actions for customer"
+    },
+    "requestsDetails": {
+      "phoneLink": "Call the customer",
+      "mapLink": "Open customer's address on Google Maps",
+      "backButton": "Go back to the requests list"
+    },
+    "requestsList": {
+      "selectAllCheckbox": "Select all requests",
+      "individualCheckbox": "Select request",
+      "detailsButton": "View details for request"
+    },
+    "overview": {
+      "last7DaysTab": "View statistics for the last 7 days",
+      "last30DaysTab": "View statistics for the last 30 days",
+      "loadingSpinner": "Loading statistics"
+    },
+    "register": {
+      "nameInput": "Enter your name",
+      "emailInput": "Enter your email address",
+      "passwordInput": "Enter your password"
+    }
+  },
+  "seo": {
+    "defaultTitle": "Marc Made it",
+    "titleTemplate": "%s - Marc Made it",
+    "description": "We develop intelligent web apps for ambitious companies.",
+    "keywords": "web apps, dashboard, cms, software agency, development, digital solution",
+    "siteName": "Marc Made it",
+    "locale": "en_US",
+    "twitter": {
+      "handle": "@marcm",
+      "site": "@marcm"
+    }
+  }
+}

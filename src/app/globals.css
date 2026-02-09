@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --breakpoint-4xl: 120rem;
+}
+
+@plugin "daisyui" {
+  themes: marcdark --default, marclight --prefersdark;
+
+}
+
+
+@plugin "daisyui/theme" {
+  name: "marcdark";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: #0A0E0A;
+  --color-base-200: #070907;
+  --color-base-300: #0C140D;
+  --color-base-content: #F1F2F1;
+  --color-primary: #6B9172;
+  --color-primary-content: #ffffff;
+  --color-secondary: #315437;
+  --color-secondary-content: #E8E8E8;
+  --color-accent: #A4CDAC;
+  --color-accent-content: #ffffff;
+  --color-neutral: #889089;
+  --color-neutral-content: oklch(98% 0.003 247.858);
+  --color-info: oklch(78% 0.154 211.53);
+  --color-info-content: oklch(30% 0.056 229.695);
+  --color-success: oklch(77% 0.152 181.912);
+  --color-success-content: oklch(27% 0.046 192.524);
+  --color-warning: #FFC07F;
+  --color-warning-content: oklch(26% 0.079 36.259);
+  --color-error: oklch(70% 0.191 22.216);
+  --color-error-content: oklch(25% 0.092 26.042);
+  --radius-selector: .5rem;
+  --radius-field: .5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 2px;
+  --depth: 1;
+  --noise: 0;
+}
+
+.input {
+  font-size: 16px;
+}
+
+.textarea {
+  font-size: 16px;
+}
+
+.select {
+  font-size: 16px;
+}
+
+
+
+
+/* Bullet & number list fix */
+.tiptap-list-style ul {
+  padding-left: 0.7rem;
+  list-style-position: inside;
+}
+
+.tiptap-list-style ul>li {
+  list-style-type: disc;
+  display: list-item;
+}
+
+
+.tiptap-list-style li>p {
+  margin: 0;
+  display: inline;
+}
+
+.tiptap-list-style h3 {
+  @apply text-lg font-bold mt-3 mb-2;
+}
+
+.tiptap-list-style h4 {
+  @apply text-lg font-medium mt-2 mb-1;
+}
+
+/* ApexCharts tooltip fix - fjern standard hvid baggrund */
+.apexcharts-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.apexcharts-tooltip-box {
+  background: transparent !important;
+}
+
+/* Custom scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--bc) / 0.2);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--bc) / 0.3);
+}
