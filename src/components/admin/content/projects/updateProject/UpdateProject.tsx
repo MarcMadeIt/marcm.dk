@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { updateProject, getProjectById } from "@/lib/server/actions";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import { FaXmark } from "react-icons/fa6";
 import { createClient } from "@/utils/supabase/client";
 
 type TagRow = {
@@ -21,6 +22,7 @@ const UpdateProject = ({
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [image, setImage] = useState<File | null>(null);
+  const [imageUrl, setImageUrl] = useState<string>("");
   const [website, setWebsite] = useState("");
   const [github, setGithub] = useState("");
 
@@ -44,9 +46,31 @@ const UpdateProject = ({
     setSelectedTagIds((prev) =>
       prev.includes(tagId)
         ? prev.filter((id) => id !== tagId)
-        : [...prev, tagId]
+        : [...prev, tagId],
     );
   };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setImage(file);
+
+    if (file) {
+      if (imageUrl && imageUrl.startsWith("blob:")) {
+        URL.revokeObjectURL(imageUrl);
+      }
+      setImageUrl(URL.createObjectURL(file));
+    } else {
+      setImageUrl("");
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (imageUrl && imageUrl.startsWith("blob:")) {
+        URL.revokeObjectURL(imageUrl);
+      }
+    };
+  }, [imageUrl]);
 
   useEffect(() => {
     const fetchProject = async () => {
@@ -150,7 +174,7 @@ const UpdateProject = ({
         className="flex flex-col items-start gap-5 w-full"
       >
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-14 w-full">
-          <div className="flex flex-col gap-5 items-center">
+          <div className="flex flex-col gap-3 items-center">
             <fieldset className="flex flex-col gap-2 relative w-full fieldset">
               <legend className="fieldset-legend">{t("title")}</legend>
               <input
@@ -161,49 +185,71 @@ const UpdateProject = ({
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
+                aria-label={t("title")}
               />
               {errors.title && (
-                <span className="absolute -bottom-4 text-xs text-red-500">
+                <span className="absolute -bottom-4 text-xs text-error">
                   {errors.title}
                 </span>
               )}
             </fieldset>
+
             <fieldset className="flex flex-col gap-2 relative w-full fieldset">
-              <legend className="fieldset-legend">{t("description")}</legend>
+              <legend className="fieldset-legend">{t("desc")}</legend>
               <textarea
                 name="desc"
-                className="textarea textarea-bordered textarea-md"
+                className="textarea textarea-bordered textarea-md text"
                 value={desc}
                 onChange={handleDescChange}
                 required
-                placeholder={t("write_project_description")}
+                placeholder={t("write_desc")}
                 style={{ resize: "none" }}
                 cols={30}
                 rows={8}
+                aria-label={t("aria.createProject.description")}
               ></textarea>
-              <div className="text-right text-xs font-medium text-gray-500">
+              <div className="text-right text-xs font-medium text-base-content/30 max-w-xs absolute right-5 bottom-3">
                 {desc.length} / 500
               </div>
               {errors.desc && (
-                <span className="absolute -bottom-4 text-xs text-red-500">
+                <span className="absolute -bottom-4 text-xs text-error">
                   {errors.desc}
                 </span>
               )}
             </fieldset>
+
+            <fieldset className="flex flex-col gap-2 relative w-full fieldset">
+              <legend className="fieldset-legend">{t("choose_image")}</legend>
+              <input
+                name="image"
+                type="file"
+                className="file-input file-input-bordered file-input-md w-full"
+                onChange={handleImageChange}
+                accept="image/*"
+                aria-label={t("aria.createProject.chooseImage")}
+              />
+              {errors.image && (
+                <span className="absolute -bottom-4 text-xs text-error">
+                  {errors.image}
+                </span>
+              )}
+            </fieldset>
           </div>
+
           <div className="flex flex-col gap-3 relative">
             <fieldset className="flex flex-col gap-2 relative w-full fieldset">
               <legend className="fieldset-legend">{t("website_url")}</legend>
               <input
                 name="website"
                 type="url"
+                placeholder="https://"
                 className="input input-bordered input-md"
-                placeholder={t("write_website_url")}
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
+                aria-label={t("aria.createProject.websiteUrl")}
               />
               {errors.website && (
-                <span className="absolute -bottom-4 text-xs text-red-500">
+                <span className="absolute -bottom-4 text-xs text-error">
                   {errors.website}
                 </span>
               )}
@@ -213,52 +259,25 @@ const UpdateProject = ({
               <input
                 name="github"
                 type="url"
-                className="input input-bordered input-md"
                 placeholder="https://github.com/..."
+                className="input input-bordered input-md"
                 value={github}
                 onChange={(e) => setGithub(e.target.value)}
               />
             </fieldset>
-            <fieldset className="flex flex-col gap-2 relative w-full fieldset">
-              <legend className="fieldset-legend">{t("image_update")}</legend>
-              <input
-                name="image"
-                type="file"
-                accept="image/*"
-                className="file-input file-input-bordered file-input-md w-full"
-                onChange={(e) => setImage(e.target.files?.[0] || null)}
-                aria-label={t("choose_image")}
-              />
-              {errors.image && (
-                <span className="absolute -bottom-4 text-xs text-red-500">
-                  {errors.image}
-                </span>
-              )}
-              {existingImage && !image && (
-                <div className="relative w-full overflow-hidden rounded-md h-0 pb-[56.25%]">
-                  <Image
-                    src={existingImage}
-                    alt={t("existing_image")}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
-                  />
-                </div>
-              )}
-            </fieldset>
 
-            <fieldset className="flex flex-col gap-2 relative w-full fieldset">
+            <fieldset className="flex flex-col gap-2 relative w-full fieldset max-w-xs">
               <legend className="fieldset-legend">Tags</legend>
               {tagLoading ? (
                 <div className="skeleton h-10 w-full" />
               ) : tagError ? (
-                <div className="text-xs text-red-500">{tagError}</div>
+                <div className="text-xs text-error">{tagError}</div>
               ) : tags.length === 0 ? (
                 <div className="text-xs text-base-content/70">
                   Ingen tags fundet.
                 </div>
               ) : (
-                <div className="flex flex-wrap gap-2 max-h-64 overflow-auto pr-2">
+                <div className="flex flex-wrap gap-2 overflow-auto">
                   {tags.map((tag) => {
                     const isSelected = selectedTagIds.includes(tag.id);
                     return (
@@ -266,10 +285,8 @@ const UpdateProject = ({
                         key={tag.id}
                         type="button"
                         onClick={() => toggleTag(tag.id)}
-                        className={`badge badge-sm cursor-pointer transition-all ${
-                          isSelected
-                            ? "badge-primary"
-                            : "badge-outline"
+                        className={`badge badge-md cursor-pointer transition-all ${
+                          isSelected ? "badge-primary" : "badge-soft"
                         }`}
                         aria-label={
                           isSelected
@@ -284,12 +301,55 @@ const UpdateProject = ({
                 </div>
               )}
             </fieldset>
+
+            {(imageUrl || existingImage) && (
+              <fieldset className="fieldset w-full flex flex-col gap-3">
+                <legend className="fieldset-legend">
+                  {t("image_preview")}
+                </legend>
+                <div className="relative group w-fit">
+                  <Image
+                    src={imageUrl || existingImage || ""}
+                    alt={
+                      imageUrl
+                        ? t("image_preview")
+                        : t("existing_image")
+                    }
+                    width={200}
+                    height={150}
+                    className="rounded-lg object-cover border border-base-300"
+                  />
+                  {imageUrl && (
+                    <button
+                      type="button"
+                      className="absolute top-2 right-2 btn btn-xs btn-circle btn-error opacity-0 group-hover:opacity-100 transition-opacity"
+                      onClick={() => {
+                        setImage(null);
+                        setImageUrl("");
+                        const fileInput = document.querySelector(
+                          'input[name="image"]',
+                        ) as HTMLInputElement;
+                        if (fileInput) fileInput.value = "";
+                      }}
+                      title="Fjern valgt billede"
+                    >
+                      <FaXmark />
+                    </button>
+                  )}
+                </div>
+              </fieldset>
+            )}
           </div>
         </div>
         <button
           type="submit"
           className="btn btn-primary mt-2"
           disabled={loading}
+          aria-label={
+            loading
+              ? t("aria.createProject.creating")
+              : t("save")
+          }
         >
           {loading ? t("editing") : t("save")}
         </button>

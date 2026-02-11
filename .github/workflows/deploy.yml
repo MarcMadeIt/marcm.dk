@@ -1,0 +1,80 @@
+name: Deploy Marcm to VPS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, Linux, X64]
+
+    permissions:
+      contents: read
+
+    env:
+      APP_DIR: /home/marcm/htdocs/marcm.dk
+      PM2_NAME: marcm-app
+      PORT: 3017
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🧰 Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: 🔄 Sync code to APP_DIR
+        run: |
+          set -e
+          mkdir -p "$APP_DIR"
+
+          # Rsync uden node_modules/.next fra workspace
+          rsync -a --delete \
+            --exclude node_modules \
+            --exclude .next \
+            --exclude .git \
+            --exclude .env \
+            ./ "$APP_DIR/"
+
+      - name: 🧹 Clean previous Next.js build
+        run: |
+          cd "$APP_DIR"
+          rm -rf .next .next/cache public/_next || true
+
+      - name: 📦 Install dependencies
+        run: |
+          cd "$APP_DIR"
+          npm ci
+
+      - name: 🔇 Disable Next.js telemetry
+        run: |
+          cd "$APP_DIR"
+          npx next telemetry disable
+
+      - name: 🔧 Build Next.js project
+        run: |
+          cd "$APP_DIR"
+          echo "⚡ Building Next.js app..."
+          npm run build
+          [ -d ".next" ] || { echo "❌ .next mangler efter build"; exit 1; }
+
+      - name: 🚀 Restart PM2 process
+        run: |
+          export PATH=$PATH:/home/marcm/.npm-global/bin
+          cd "$APP_DIR"
+          pm2 delete "$PM2_NAME" || true
+          PORT=$PORT pm2 start npm --name "$PM2_NAME" -- start
+          pm2 save
+          pm2 list
+
+      - name: ✅ Deployment completed
+        run: echo "🚀 Deployment successful!"

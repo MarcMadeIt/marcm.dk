@@ -9,7 +9,7 @@ import Blog from "./blog/Blog";
 import { getProjectsCount, getBlogsCount } from "@/lib/server/actions";
 
 const NavContent = () => {
-  const [activeTab, setActiveTab] = useState("blog");
+  const [activeTab, setActiveTab] = useState("projects");
   const { t } = useTranslation();
   const [blogCount, setBlogCount] = useState<number | null>(null);
   const [projectsCount, setProjectsCount] = useState<number | null>(null);
@@ -50,19 +50,6 @@ const NavContent = () => {
         <button
           role="tab"
           className={`tab gap-2  ${
-            activeTab === "blog"
-              ? "tab-active bg-base-200 rounded-lg shadow-md"
-              : ""
-          }`}
-          onClick={() => setActiveTab("blog")}
-          aria-label={t("aria.navContent.reviewsTab")}
-        >
-          <FaRegNewspaper />
-          {t("blog_more")}
-        </button>
-        <button
-          role="tab"
-          className={`tab gap-2  ${
             activeTab === "projects"
               ? "tab-active bg-base-200 rounded-lg shadow-md"
               : ""
@@ -73,17 +60,30 @@ const NavContent = () => {
           <FaSuitcase />
           Projects
         </button>
+        <button
+          role="tab"
+          className={`tab gap-2  ${
+            activeTab === "blog"
+              ? "tab-active bg-base-200 rounded-lg shadow-md"
+              : ""
+          }`}
+          onClick={() => setActiveTab("blog")}
+          aria-label={t("aria.navContent.reviewsTab")}
+        >
+          <FaRegNewspaper />
+          {t("blog_more")}
+        </button>
       </div>
       <div className="mt-3 2xl:flex gap-3">
         <div className="flex-3/4 4xl:flex-5/6">
-          {activeTab === "blog" && (
-            <div className="bg-base-200 rounded-lg shadow-md p-5 md:p-7">
-              <Blog />
-            </div>
-          )}
           {activeTab === "projects" && (
             <div className="bg-base-200 rounded-lg shadow-md p-5 md:p-7">
               <Projects />
+            </div>
+          )}
+          {activeTab === "blog" && (
+            <div className="bg-base-200 rounded-lg shadow-md p-5 md:p-7">
+              <Blog />
             </div>
           )}
         </div>
