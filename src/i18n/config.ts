@@ -18,10 +18,11 @@ if (!i18n.isInitialized) {
     .use(initReactI18next)
     .init({
       resources,
+      lng: "en", // Default to English
       fallbackLng: "en",
       supportedLngs: ["en", "da"],
       detection: {
-        order: ["localStorage", "navigator"],
+        order: ["localStorage"], // Only check localStorage (user's previous choice), not browser language
         caches: ["localStorage"],
       },
       interpolation: {

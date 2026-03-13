@@ -48,6 +48,12 @@ const Projects: React.FC = () => {
   }, []);
 
   const uiLang = i18n.language?.startsWith("da") ? "da" : "en";
+  const oldPortfolioText =
+    uiLang === "da"
+      ? "Se mine tidligere multimediedesigner-projekter fra 2023-2024."
+      : "See my previous multimedia design projects from 2023-2024.";
+  const oldPortfolioButton =
+    uiLang === "da" ? "Se gammel portfolio" : "View old portfolio";
 
   const getDisplayDesc = (p: Project): string => {
     const sourceLang = (p.source_lang ?? "en").toLowerCase();
@@ -190,6 +196,20 @@ const Projects: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-16 md:mt-24 pt-4 md:pt-6 flex flex-col items-center gap-5 text-center">
+          <p className="text-sm md:text-base text-base-content/75 max-w-2xl">
+            {oldPortfolioText}
+          </p>
+          <a
+            href="https://mm.marcm.dk/projects"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline btn-primary"
+          >
+            {oldPortfolioButton}
+          </a>
         </div>
       </div>
     </section>

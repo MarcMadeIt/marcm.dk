@@ -122,7 +122,7 @@ const Header = () => {
                   {t("Header.projects")}
                 </Link>
               </li>
-
+              {/* 
               <li className="text-xl font-semibold">
                 <Link
                   href="/#blog"
@@ -131,7 +131,7 @@ const Header = () => {
                 >
                   {t("Header.blog")}
                 </Link>
-              </li>
+              </li> */}
 
               <li className="text-xl font-semibold">
                 <Link
@@ -170,7 +170,7 @@ const Header = () => {
                 {t("Header.projects")}
               </Link>
             </li>
-            <li className="text-base font-semibold">
+            {/* <li className="text-base font-semibold">
               <Link
                 href="/#blog"
                 onClick={(e) => handleSmoothScroll(e, "#blog")}
@@ -178,7 +178,7 @@ const Header = () => {
               >
                 {t("Header.blog")}
               </Link>
-            </li>
+            </li> */}
             <li className="text-base font-semibold">
               <Link
                 href="/#contact"
