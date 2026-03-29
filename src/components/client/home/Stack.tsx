@@ -56,11 +56,11 @@ const primaryStacks: TechStack[] = [
     ),
   },
   {
-    name: "Prisma",
-    description: "Schema design, migrations, typed queries",
+    name: "Tailwind CSS",
+    description: "Utility-first styling for fast, consistent UI",
     icon: (
       <div className="w-12 h-12 ">
-        <StackIcon name="prisma" variant="dark" />
+        <StackIcon name="tailwindcss" />
       </div>
     ),
   },
@@ -91,9 +91,9 @@ const secondaryStacks: TechStack[] = [
     icon: <span className="text-pink-500 font-bold">GQL</span>,
   },
   {
-    name: "MongoDB",
-    description: "Document modeling when relational is not ideal",
-    icon: <span className="text-green-500 font-bold">MDB</span>,
+    name: "Prisma",
+    description: "Schema design, migrations, typed queries",
+    icon: <span className="text-slate-700 font-bold">PR</span>,
   },
   {
     name: "Supabase",
@@ -102,14 +102,14 @@ const secondaryStacks: TechStack[] = [
   },
 
   {
-    name: "Azure",
-    description: "Cloud services & enterprise environments",
-    icon: <span className="text-blue-600 font-bold">AZ</span>,
+    name: "Turborepo",
+    description: "Monorepo build orchestration and caching",
+    icon: <span className="text-violet-600 font-bold">TR</span>,
   },
   {
-    name: "Vue",
-    description: "Composition API, Pinia",
-    icon: <span className="text-green-600 font-bold">Vue</span>,
+    name: "Claude",
+    description: "AI-assisted workflows for coding and content",
+    icon: <span className="text-orange-500 font-bold">AI</span>,
   },
 ];
 
